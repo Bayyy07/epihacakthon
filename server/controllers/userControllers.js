@@ -195,10 +195,10 @@ const extractJSON = (text) => {
 const testApi = async (req, res) => {
   const { prompt } = req.body;
   const openai = new OpenAI({
-    apiKey:"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" // Use environment variable for security
+    apiKey:process.env.api_key,
   });
 
-  const token = "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";
+  const token = process.env.api_token;
 
   const client = new OpenAI({
     baseURL: "https://models.inference.ai.azure.com",
